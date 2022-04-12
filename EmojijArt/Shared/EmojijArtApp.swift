@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SwiftUIDemoApp: App {
+struct EmojijArtApp: App {
 	@Environment(\.scenePhase) var scenePhase
 
 	@StateObject var paletteStore = PaletteStore(named: "Default")
