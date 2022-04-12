@@ -113,8 +113,12 @@ struct EmojiMemoryGameView: View {
 				game.shuffle()
 			}
 		} label: {
-			Image(systemName: "shuffle.circle")
+			Text("Shuffle")
 		}
+		.tint(.orange)
+		.buttonStyle(.bordered)
+		.buttonBorderShape(.automatic)
+		.controlSize(.large)
 	}
 
 	var restart: some View {
@@ -124,8 +128,12 @@ struct EmojiMemoryGameView: View {
 				game.restart()
 			}
 		} label: {
-			Image(systemName: "restart.circle")
+			Text("Restart")
 		}
+		.tint(.orange)
+		.buttonStyle(.bordered)
+		.buttonBorderShape(.automatic)
+		.controlSize(.large)
 	}
 
 	@ViewBuilder
@@ -172,7 +180,8 @@ struct CardView: View {
 				.opacity(0.5)
 				Text(card.content)
 					.rotationEffect(Angle(degrees: card.isMatched ? 360 : 0))
-					.animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+//					.animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+					.animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: 1)
 					.font(.system(size: DrawingConstants.fontSize))
 					.scaleEffect(scale(thatFits: geometry.size))
 			}
